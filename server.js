@@ -1,11 +1,10 @@
-const fetch = require('node-fetch');
 require('dotenv').config();
 const express  = require('express');
 const cors     = require('cors');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: ['https://ezadmissions.github.io', 'http://localhost:3000', 'http://127.0.0.1:5500'], methods: ['GET','POST'], allowedHeaders: ['Content-Type'] }));
 app.use(express.json());
 
 const PDL_KEY  = process.env.PDL_KEY;
